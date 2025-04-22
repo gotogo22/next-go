@@ -5,6 +5,7 @@ import (
 	"cow-templates/src/database/models"
 	"cow-templates/src/logger"
 	"time"
+	"os"
 
 	"fmt"
 
@@ -18,7 +19,11 @@ var (
 
 func Connect() (*gorm.DB, error) {
 
-	var dsn = "user=postgres password=postgres dbname=postgres host=localhost port=5432 sslmode=disable"
+	dsn := os.Getenv("DATABASE_URL")
+    if dsn == "" {
+        return nil, fmt.Errorf("DATABASE_URL is not set")
+    }
+
 	var err error
 	DB, err = gorm.Open(postgres.New(postgres.Config{
 		DSN:                  dsn,

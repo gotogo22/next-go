@@ -16,13 +16,10 @@ services:
   backend:
     build:
       context: ./backend
-      # Dockerfile の名前が "Dockerfile" なら dockerfile キーは省略可
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
     environment:
-      DATABASE_URL: 'postgres://postgres:postgres@db:5432/postgres?sslmode=disable'
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres?sslmode=disable
     depends_on:
       - db
       - redis
