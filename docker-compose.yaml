@@ -18,6 +18,11 @@ services:
       context: ./backend
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/.env:/app/.env
+
+
     environment:
       DATABASE_URL: postgres://postgres:postgres@db:5432/postgres?sslmode=disable
     depends_on:
