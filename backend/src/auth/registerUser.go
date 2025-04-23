@@ -4,8 +4,8 @@ import (
 	"context"
 	"cow-templates/src/database"
 	"cow-templates/src/database/models"
-	"cow-templates/src/email"
-	"cow-templates/src/logger"
+	// "cow-templates/src/Email"
+	// "cow-templates/src/logger"
 	"cow-templates/src/middleware"
 	"errors"
 	"fmt"
@@ -64,16 +64,16 @@ func Register(c *fiber.Ctx) error {
 		return err
 	}
 
-	verificationToken, err := generateVerificationToken(user.Id)
-	if err != nil {
-		return fmt.Errorf("failed to generate verification token: %w", err)
-	}
+	// verificationToken, err := generateVerificationToken(user.Id)
+	// if err != nil {
+	// 	return fmt.Errorf("failed to generate verification token: %w", err)
+	// }
 
-	err = email.SendVerificationEmail(user.Email, verificationToken)
-	if err != nil {
-		logger.Error("Error sending verification email:", err)
-		return errors.New("failed to send verification email")
-	}
+	// err = email.SendVerificationEmail(user.Email, verificationToken)
+	// if err != nil {
+	// 	logger.Error("Error sending verification email:", err)
+	// 	return errors.New("failed to send verification email")
+	// }
 
 	if err := middleware.CreateSessionForUser(c, &user); err != nil {
 		return err
@@ -83,7 +83,9 @@ func Register(c *fiber.Ctx) error {
 	session.Set("isVerified", user.IsVerified)
 	session.Save()
 
-	return c.JSON(fiber.Map{"message": "Registration successful. Please verify your email to activate your account."})
+	// return c.JSON(fiber.Map{"message": "Registration successful. Please verify your email to activate your account."})
+	return c.JSON(fiber.Map{"message": "Registration successful."})
+
 }
 
 func generateVerificationToken(userId uint) (string, error) {
