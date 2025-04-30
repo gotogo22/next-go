@@ -12,7 +12,7 @@ import {
       id: "item-1",
       question: "What is the cost of the free plan?",
       answer:
-        "Our free plan is completely free, with no monthly or annual charges. It's a great way to get started and explore our basic features.",
+        "Our free plan is completely free, with no monthly or annual charges. It&apos;s a great way to get started and explore our basic features.",
     },
     {
       id: "item-2",
@@ -36,7 +36,7 @@ import {
       id: "item-5",
       question: "Is there a trial period for the paid plans?",
       answer:
-        "We offer a 14-day free trial for both the Pro Monthly and Pro Annual plans. It's a great way to experience all the features before committing to a paid subscription.",
+        "We offer a 14-day free trial for both the Pro Monthly and Pro Annual plans. It&apos;s a great way to experience all the features before committing to a paid subscription.",
     },
   ];
   
@@ -48,7 +48,7 @@ import {
         Frequently Asked Questions
     </h1>
     <p className='mt-4 text-lg sm:text-xl text-gray-600 text-center'>
-    Explore our comprehensive FAQ to find quick answers to common inquiries. If you need further assistance, don't hesitate to contact us for personalized help.
+    Explore our comprehensive FAQ to find quick answers to common inquiries. If you need further assistance, don&apos;t hesitate to contact us for personalized help.
     </p>
   
         <Accordion type="single" collapsible className="my-12 w-full">

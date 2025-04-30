@@ -41,11 +41,8 @@ const Page = () => {
 
     useEffect(() => {
         const redirectToBilling = async () => {
-            // Check if there is user and subscription information in the cookies
-            
-
-            if (user) {
-                // If cookies are present, extract user information and subscription information
+            if (!loading && user) {
+                // Check if there is user and subscription information in the cookies
                 
 
                 if (getUserInfo() && getUserInfo()?.subscriptionPlan == "Pro" || getUserInfo()?.subscriptionPlan == "Business") {
@@ -77,7 +74,7 @@ const Page = () => {
         };
 
         redirectToBilling();
-    }, [loading, user, router]);; // Empty dependency array to run the effect only once
+    }, [loading, user, router]); // Empty dependency array to run the effect only once
 
 
    

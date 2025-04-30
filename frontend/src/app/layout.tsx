@@ -7,6 +7,7 @@ import  Navbar  from '@/components/Navbar/Navbar';
 import { Toaster } from "@/components/ui/sonner"
 import UserPage from '@/components/UserPage';
 import { UserProvider } from '@/components/Usercontext';
+import SWRProvider from '@/providers/SWRProvider';
 
 
 
@@ -39,13 +40,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
           >
-            <main className='relative flex flex-col min-h-screen'>
+            <SWRProvider>
+              <main className='relative flex flex-col min-h-screen'>
              
-              <UserPage  />
-              <Navbar />
+                <UserPage  />
+                <Navbar />
           
-              <div className='flex-grow flex-1'>{children}</div>
-            </main>
+                <div className='flex-grow flex-1'>{children}</div>
+              </main>
+            </SWRProvider>
           </ThemeProvider>
         
             <Toaster position="top-center" richColors  />

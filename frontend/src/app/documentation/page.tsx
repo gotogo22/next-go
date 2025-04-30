@@ -90,13 +90,13 @@ export default function Page() {
           <div className="max-w-4xl">
             <h1 className="text-3xl font-bold">Introduction</h1>
             <p className="mt-4 text-gray-500 dark:text-gray-400">
-              Welcome to the documentation for our project. Here you'll find everything you need to get started,
+              Welcome to the documentation for our project. Here you&apos;ll find everything you need to get started,
               including installation instructions, API documentation, and more.
             </p>
             <section className="mt-10">
               <h2 className="text-2xl font-bold">Installation</h2>
               <p className="mt-4 text-gray-500 dark:text-gray-400">
-                To get started, you'll need to install our package. You can do this using your preferred package
+                To get started, you&apos;ll need to install our package. You can do this using your preferred package
                 manager:
               </p>
               <div className="mt-4 rounded-md bg-gray-100 p-4 dark:bg-gray-800">
@@ -105,7 +105,7 @@ export default function Page() {
                 </pre>
               </div>
               <p className="mt-4 text-gray-500 dark:text-gray-400">
-                Once you've installed the package, you can start using it in your project.
+                Once you&apos;ve installed the package, you can start using it in your project.
               </p>
             </section>
             <section className="mt-10">

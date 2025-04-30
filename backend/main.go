@@ -49,6 +49,14 @@ func main() {
 
 	logger.Info("Setting up routes...")
 	router.Setup(app)
+	// --- ここから追加 ---
+	app.Get("/api/health", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{
+			"status":  "ok",
+			"message": "API is running 🚀",
+		})
+	})
+	// --- ここまで追加 ---
 
 	logger.Info("cow-templates BACKEND SERVER starting on port 8000...")
 
