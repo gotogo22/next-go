@@ -78,3 +78,52 @@ $ make air / make run  .
 
 
 
+
+
+## Project Structure
+
+### Frontend Structure
+```
+frontend/
+├── public/                 # そのまま配信される静的ファイル
+│   └── images/
+│
+├── src/                    # 以降は全部 src にまとめる派が主流
+│   ├── app/                # App Router 直下。page.tsx / layout.tsx など
+│   │   ├── (marketing)/    # ルートグループ例
+│   │   ├── dashboard/      # /dashboard 以下の UI
+│   │   │   ├── page.tsx
+│   │   │   └── layout.tsx
+│   │   └── api/            # Route Handlers (Server Actions) など
+│   │
+│   ├── components/         # 純粋 UI コンポーネント。再利用可能
+│   │   ├── ui/             # Button / Card など Atomic な部品
+│   │   └── common/         # ユースケース横断の共通 UI
+│   │
+│   ├── features/           # ドメインごと (Redux Toolkit / zustand などと相性良)
+│   │   └── user/           # 例: ユーザー機能
+│   │       ├── components/ # 機能特化 UI
+│   │       ├── hooks.ts
+│   │       └── slice.ts
+│   │
+│   ├── hooks/              # 共通カスタムフック（useFetch 等）
+│   ├── services/           # API 呼び出しや SDK ラッパー
+│   ├── lib/                # util / 日付フォーマット / fetch ラッパ
+│   ├── constants/          # 定数や Enum
+│   ├── styles/             # global.css, tailwind.scss など
+│   ├── types/              # 型定義（※ `@types` では賄えないドメイン型）
+│   └── tests/              # Jest / RTL / Vitest など
+│
+├── .env.example            # フロントエンドでも env 分離推奨
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── Dockerfile
+```
+
+
+
+
+
+
+

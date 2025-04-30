@@ -1,6 +1,6 @@
 module cow-templates
 
-go 1.22.2
+go 1.24
 
 require (
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
