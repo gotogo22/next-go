@@ -1,5 +1,5 @@
-# Node.jsの必要なバージョン（Next.jsは18.17.0以上を要求）
-FROM node:18.17.0
+# Node.jsの必要なバージョン
+FROM node:18.18.0
 
 # 作業ディレクトリを設定
 WORKDIR /app
