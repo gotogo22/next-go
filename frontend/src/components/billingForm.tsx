@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useToast } from './ui/use-toast';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/Button';
+import { Button } from './ui/button';
 import { Loader2 } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';

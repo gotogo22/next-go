@@ -1,7 +1,7 @@
 "use client"
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import UpgradeButton from '@/components/UpgrageButton';
-import { Button, buttonVariants } from '@/components/ui/Button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 import { getServerSideUser } from '@/lib/payload-utils';

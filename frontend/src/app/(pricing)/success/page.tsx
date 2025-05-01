@@ -5,7 +5,7 @@ import { CheckIcon } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { getCookie } from 'cookies-next';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useUser } from '@/components/Usercontext';
 interface UserContextValue {

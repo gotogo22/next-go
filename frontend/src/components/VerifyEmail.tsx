@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { XCircle, Loader2 } from 'lucide-react';
 import Image from 'next/image';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
 import { toast } from 'sonner';
 

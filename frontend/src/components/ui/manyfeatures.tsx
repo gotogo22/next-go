@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { motion, type MotionValue, useMotionTemplate,  useMotionValue, } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import { Button } from './Button';
+import { Button } from './button';
 import { CheckCheckIcon, CheckIcon, ReplyIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './badge';

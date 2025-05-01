@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Button, buttonVariants } from "./ui/Button";
+import { Button, buttonVariants } from "./ui/button";
 
 
 

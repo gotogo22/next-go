@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import { Button } from './ui/Button';
+import { Button } from './ui/button';
 import { useUser } from '@/components/Usercontext';
 import { loadStripe } from '@stripe/stripe-js';
 import { useSession } from './sessionId';

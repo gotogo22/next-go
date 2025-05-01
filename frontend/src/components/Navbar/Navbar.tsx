@@ -4,7 +4,7 @@ import Link from "next/link";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import { Icons } from '@/components/Navbar/Icons';
 import { ModeToggle } from "@/components/SwitchMode";
-import { Button, buttonVariants } from '@/components/ui/Button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { NavItems } from "./Navitems";
 
 import { Progress } from "@/components/ui/progress";

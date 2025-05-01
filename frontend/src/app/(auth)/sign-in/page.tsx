@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Icons } from '@/components/Navbar/Icons';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight, Loader2 } from 'lucide-react';
 import { Label } from '@radix-ui/react-dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils'; 
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { SignInCredentialsValidator, TSignInCredentialsValidator } from '@/lib/validators/sign-validator';
 import { zodResolver } from '@hookform/resolvers/zod';

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { ModeToggle } from '@/components/SwitchMode'
-import { buttonVariants } from '@/components/ui/Button'
+import { buttonVariants } from '@/components/ui/button'
 import { Github } from 'lucide-react'
 
 import {

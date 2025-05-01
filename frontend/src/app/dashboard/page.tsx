@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Ghost } from 'lucide-react';
-import { Button, buttonVariants } from '@/components/ui/Button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { useToast } from '@/components/ui/use-toast';

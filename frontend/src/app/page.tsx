@@ -1,7 +1,7 @@
 "use client"
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
-import { Button, buttonVariants } from "@/components/ui/Button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 import Image from "next/image";
 import Link from "next/link";
