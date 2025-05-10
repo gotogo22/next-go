@@ -9,6 +9,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     # 必要に応じて環境変数や依存サービスを指定できます
     depends_on:
       - backend
