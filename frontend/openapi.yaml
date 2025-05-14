@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: ビデオ管理API
+  version: 1.0.0
+  description: ビデオの管理を行うためのAPI仕様
+servers:
+  - url: /api
+paths:
+  /videos:
+    get:
+      summary: ビデオ一覧の取得
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Video'
+    post:
+      summary: 新規ビデオの追加
+      responses:
+        '201':
+          description: 作成成功
+  /videos/{id}:
+    get:
+      summary: 特定のビデオを取得
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 成功
+components:
+  schemas:
+    Video:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        url:
+          type: string
+        thumbnail:
+          type: string
+        uploader:
+          type: string
+        uploadedAt:
+          type: string
+        description:
+          type: string
