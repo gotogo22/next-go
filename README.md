@@ -59,6 +59,7 @@ $ docker compose -f "nextjs-golang\docker-compose.yaml" up -d --build
 $ cd frontend
 $ npm install
 $ npm run dev
+$ npm run lint
 $ cd backend
 $ go mod download
 $ make air / make run  .
@@ -118,6 +119,23 @@ frontend/
 ├── next.config.js
 ├── tailwind.config.ts
 ├── tsconfig.json
+├── openapi.yaml            # API仕様書（フロントエンド用参照・型生成）
+└── Dockerfile
+```
+
+### Backend Structure
+```
+backend/
+├── api/                    # APIハンドラー
+├── config/                 # 設定ファイル
+├── database/               # データベース関連
+├── middleware/             # ミドルウェア
+├── models/                 # データモデル
+├── repositories/           # データアクセス層
+├── services/               # ビジネスロジック
+├── utils/                  # ユーティリティ関数
+├── main.go                 # エントリーポイント
+├── openapi.yaml            # API仕様書（OpenAPI/Swagger形式）
 └── Dockerfile
 ```
 
