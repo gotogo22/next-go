@@ -8,18 +8,9 @@ import Link from "next/link";
 import { content } from "@/components/content";
 import TextRevealByWord from "@/components/TextReavel";
 
-
-
-
-
-
-
 import {
   ArrowDownToLine,
   ArrowRight,
-  
-  
- 
   Github,
   Twitter,
   LeafIcon,
@@ -34,10 +25,8 @@ import { Info } from "@/components/info";
 import VideoCard from "@/components/VideoCard";
 import { Video } from "@/types/video";
 
-
-
-
-export const features = [
+// featuresをローカル変数に変更（exportを削除）
+const features = [
   {
     title: "Save Your Knowledge",
     description:

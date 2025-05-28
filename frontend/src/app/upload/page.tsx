@@ -3,6 +3,12 @@ import { useState, useCallback } from "react";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 
+/**
+ * 動画アップロードページコンポーネント
+ * 
+ * 動画ファイルのアップロード、タイトル・説明の入力、サムネイルの設定が可能
+ * @returns {JSX.Element} アップロードページのコンポーネント
+ */
 export default function UploadPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -10,6 +16,10 @@ export default function UploadPage() {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
+  /**
+   * ドロップされたファイルを処理する関数
+   * @param {File[]} acceptedFiles - ドロップされたファイルの配列
+   */
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     if (file) {
@@ -38,6 +48,10 @@ export default function UploadPage() {
     maxFiles: 1
   });
 
+  /**
+   * サムネイル画像の変更を処理する関数
+   * @param {React.ChangeEvent<HTMLInputElement>} e - ファイル入力のイベント
+   */
   const handleThumbnailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -49,6 +63,10 @@ export default function UploadPage() {
     }
   };
 
+  /**
+   * フォーム送信を処理する関数
+   * @param {React.FormEvent} e - フォーム送信イベント
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // ここで実際のアップロード処理を実装
