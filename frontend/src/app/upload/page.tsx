@@ -2,6 +2,7 @@
 import { useState, useCallback } from "react";
 import { Upload, X, Image as ImageIcon } from "lucide-react";
 import { useDropzone } from "react-dropzone";
+import { useUploadValidation } from "@/lib/validators/uploadValidator";
 
 /**
  * 動画アップロードページコンポーネント
@@ -15,6 +16,8 @@ export default function UploadPage() {
   const [thumbnail, setThumbnail] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
+  
+  const { errors, validateForm, clearFieldError } = useUploadValidation();
 
   /**
    * ドロップされたファイルを処理する関数
@@ -69,6 +72,18 @@ export default function UploadPage() {
    */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // バリデーションチェック
+    const isValid = validateForm({
+      title,
+      description,
+      thumbnail: thumbnail || undefined,
+    });
+
+    if (!isValid) {
+      return;
+    }
+
     // ここで実際のアップロード処理を実装
     console.log("Submitting:", { title, description, thumbnail });
   };
@@ -109,31 +124,52 @@ export default function UploadPage() {
         {/* タイトル入力 */}
         <div>
           <label htmlFor="title" className="block text-sm font-medium mb-2">
-            タイトル
+            タイトル <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             id="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            onChange={(e) => {
+              setTitle(e.target.value);
+              // エラーをクリア
+              if (errors.title) {
+                clearFieldError('title');
+              }
+            }}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+              errors.title ? "border-red-500" : ""
+            }`}
             placeholder="動画のタイトルを入力"
-            required
           />
+          {errors.title && (
+            <p className="text-red-500 text-sm mt-1">{errors.title}</p>
+          )}
         </div>
 
         {/* 説明文入力 */}
         <div>
           <label htmlFor="description" className="block text-sm font-medium mb-2">
-            説明
+            説明 <span className="text-red-500">*</span>
           </label>
           <textarea
             id="description"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 h-32"
+            onChange={(e) => {
+              setDescription(e.target.value);
+              // エラーをクリア
+              if (errors.description) {
+                clearFieldError('description');
+              }
+            }}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 h-32 ${
+              errors.description ? "border-red-500" : ""
+            }`}
             placeholder="動画の説明を入力"
           />
+          {errors.description && (
+            <p className="text-red-500 text-sm mt-1">{errors.description}</p>
+          )}
         </div>
 
         {/* サムネイルアップロード */}
@@ -175,7 +211,7 @@ export default function UploadPage() {
         {/* アップロードボタン */}
         <button
           type="submit"
-          className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors"
+          className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
           disabled={isUploading}
         >
           {isUploading ? "アップロード中..." : "アップロード"}

@@ -103,16 +103,19 @@ frontend/
 │   │
 │   ├── features/           # ドメインごと (Redux Toolkit / zustand などと相性良)
 │   │   └── user/           # 例: ユーザー機能
+│   │       ├── api/        # 機能特化 api
 │   │       ├── components/ # 機能特化 UI
-│   │       ├── hooks.ts
-│   │       └── slice.ts
+│   │       ├── hooks.ts/   # 機能特化 カスタムフック
+│   │       └── types.ts    # 機能特化 型定義
 │   │
 │   ├── hooks/              # 共通カスタムフック（useFetch 等）
 │   ├── services/           # API 呼び出しや SDK ラッパー
 │   ├── lib/                # util / 日付フォーマット / fetch ラッパ
+
 │   ├── constants/          # 定数や Enum
 │   ├── styles/             # global.css, tailwind.scss など
 │   ├── types/              # 型定義（※ `@types` では賄えないドメイン型）
+│   ├── utils/              # アプリ全体で共通して使用する共通関数
 │   └── tests/              # Jest / RTL / Vitest など
 │
 ├── .env.example            # フロントエンドでも env 分離推奨
