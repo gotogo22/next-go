@@ -24,10 +24,8 @@ alwaysApply: true
   - components/ - その機能専用のReactコンポーネント
   -`hooks/ - その機能専用のカスタムhooks
   - types/ - その機能専用のTypeScript型定義
-- 各featureディレクトリには index.ts ファイルを作成してpublic APIを定義する
-- 機能間の依存は features/[機能名]/index.ts を通してのみ行う
 - 共通で使用するコンポーネント・hooks・utils・typesは src/[機能名]/ 配下に配置する
-
+- 定数はsrc/constants 配下に配置する
 
 ## バックエンド
 - 構造体やメソッドの命名はキャメルケースを使用
